@@ -16,7 +16,7 @@ namespace MyLauncher
         bool letsClose = false;
         int time;
 
-        string root = "\"cd /\"";
+        //string root = "\"cd /\"";
         string cmd_shutdown = "shutdown -s -t "; 
         string cmd_cancel = "shutdown -a";
 

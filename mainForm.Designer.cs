@@ -196,7 +196,7 @@ namespace MyLauncher
             this.MaximizeBox = false;
             this.Name = "mainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "  MyLauncher";
+            this.Text = "  MyHub";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mainForm_Closing);
             this.Load += new System.EventHandler(this.mainForm_Load);
             this.iconMenu.ResumeLayout(false);
