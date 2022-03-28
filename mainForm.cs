@@ -17,8 +17,8 @@ namespace MyLauncher
         int time;
 
         string root = "\"cd /\"";
-        string cmd_shutdown = "\"shutdown -s -t \""; 
-        string cmd_cancel = "\"shutdown -a\"";
+        string cmd_shutdown = "shutdown -s -t "; 
+        string cmd_cancel = "shutdown -a";
 
         public mainForm()
         {
@@ -71,16 +71,16 @@ namespace MyLauncher
         private void cancel()
         {
             animBtn();
-            System.Diagnostics.Process.Start("cmd.exe", root);
-            System.Diagnostics.Process.Start("cmd.exe", cmd_cancel);
+            //System.Diagnostics.Process.Start("cmd.exe", root);
+            System.Diagnostics.Process.Start("cmd.exe", "/C" + cmd_cancel);
         }
 
         private void shutdown()
         {
             animBtn();
-            cmd_shutdown = cmd_shutdown + timeCalc();
-            System.Diagnostics.Process.Start("CMD.exe", root);
-            System.Diagnostics.Process.Start("CMD.exe", cmd_shutdown);
+            cmd_shutdown += timeCalc();
+            //System.Diagnostics.Process.Start("CMD.exe", root);
+            System.Diagnostics.Process.Start("cmd.exe", "/C " + cmd_shutdown);
         }
 
         private void animBtn()
@@ -93,8 +93,8 @@ namespace MyLauncher
         private int timeCalc()
         {
             time = 0;
-            time += (int)numUpDo_Horas.Value * 60 * 60;
-            time += (int)numUpDo_Mins.Value * 60;
+            time = (int)numUpDo_Horas.Value * 60 * 60;
+            time = time + (int)numUpDo_Mins.Value * 60;
             return time;
         }
     }
